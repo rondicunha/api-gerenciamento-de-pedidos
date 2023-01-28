@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
-@Entity
+@Entity(name = "pedidos")
 public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany
-    @JoinColumn(name = "produto_id")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pedido_id")
     private List<Produto> produto;
     @ManyToOne
     @JoinColumn(name = "cliente_id")

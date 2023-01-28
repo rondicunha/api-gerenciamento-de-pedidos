@@ -5,8 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class Producao {
+@Entity(name = "produtores")
+public class Produtor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,10 +15,10 @@ public class Producao {
     private String senha;
     private String cargo;
 
-    public Producao() {
+    public Produtor() {
     }
 
-    public Producao(Long id, String nome, String login, String senha, String cargo) {
+    public Produtor(Long id, String nome, String login, String senha, String cargo) {
         this.id = id;
         this.nome = nome;
         this.login = login;
