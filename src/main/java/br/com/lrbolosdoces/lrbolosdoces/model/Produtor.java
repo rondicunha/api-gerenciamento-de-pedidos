@@ -11,6 +11,7 @@ public class Produtor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private String telefone;
     private String login;
     private String senha;
     private String cargo;
@@ -18,9 +19,10 @@ public class Produtor {
     public Produtor() {
     }
 
-    public Produtor(Long id, String nome, String login, String senha, String cargo) {
+    public Produtor(Long id, String nome, String telefone, String login, String senha, String cargo) {
         this.id = id;
         this.nome = nome;
+        this.telefone = telefone;
         this.login = login;
         this.senha = senha;
         this.cargo = cargo;
@@ -40,6 +42,14 @@ public class Produtor {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getLogin() {

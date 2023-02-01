@@ -11,6 +11,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    private String telefone;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "cliente_id")
     private List<Endereco> endereco;
@@ -18,9 +19,10 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, List<Endereco> endereco) {
+    public Cliente(Long id, String nome, String telefone, List<Endereco> endereco) {
         this.id = id;
         this.nome = nome;
+        this.telefone = telefone;
         this.endereco = endereco;
     }
 
@@ -38,6 +40,14 @@ public class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public List<Endereco> getEndereco() {
